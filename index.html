@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/bg.jpeg'); /* Replace with the actual path to your image */
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            display: none;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .small-image {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 150px;
+            height: 50px;
+            background-color: rgb(227, 213, 213);
+            color: black;
+            border-radius: 15%;
+        }
+
+        button:hover {
+            background-color: rgb(210, 229, 235);
+        }
+    </style>
+</head>
+<body>
+    <video class="video-background" autoplay muted playsinline onended="showBackgroundImage();">
+        <source src="/Netflix New Logo Animation 2019.mp4" type="video/mp4"> <!-- Replace with the actual path to your video -->
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="background-image"></div>
+
+    <div class="content">
+        <img src="/smiley.jpg" class="small-image hidden" id="smallImage"> <!-- Replace with the actual path to your small image -->
+        <button class="hidden" id="myButton" onclick="buttonClicked()">Login as you &#128521;</button>
+    </div>
+
+    <script>
+        function showBackgroundImage() {
+            document.querySelector('.background-image').style.display = 'block';
+            document.querySelector('.video-background').style.display = 'none';
+            document.getElementById('smallImage').classList.remove('hidden');
+            document.getElementById('myButton').classList.remove('hidden');
+        }
+
+        function buttonClicked() {
+            window.location.href = 'home.html';  // Assuming the file is named nextpage.html and is in the same directory
+        }
+    </script>
+</body>
+</html>

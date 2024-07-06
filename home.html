@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Streaming Platform</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+        .banner {
+            background-image: url("/bg.jpeg");  /* Replace with path to your movie screenshot image */
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:flex-start;
+            padding-left: 3rem;
+            padding-bottom: 2rem;
+        }
+        .banner-title {
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px black;
+        }
+        .banner-info {
+            color: white;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .play-btn, .watch-later-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .play-btn {
+            background-color: #17b978;
+            color: white;
+        }
+        .trending-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            background-color: rgb(56, 54, 54);
+            padding-top: 3rem;
+        }
+        .trending-movie {
+            width: calc(25% - 20px);
+            margin: 10px;
+        }
+        .trending-movie img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .container {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1 class="banner-title">The Shawshank Redemption</h1>
+            <p class="banner-info">Director: Ananya G Gouda<br>Cast: Arnav Keche, Ananya G Gouda</p>
+            <div class="button-container">
+                <button class="play-btn">
+                    Play Now
+                </button>
+            </div>
+        </div>
+        <div class="trending-section">
+            <div class="trending-movie">
+                <img  src="/11.jpeg" alt="Movie Poster 1">  
+            </div>
+            <div class="trending-movie">
+                <img  src="/2.jpeg" alt="Movie Poster 2">  
+            </div>
+            <div class="trending-movie">
+                <img src="/3.jpeg" alt="Movie Poster 2">  
+            </div>
+            <div class="trending-movie">
+                <img src="/4.jpeg" alt="Movie Poster 3">  
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function redirectToLink() {
+        window.open('https://drive.google.com/file/d/1iZwIcbT_aAjfys1qYHbwpQbBYYSG9lUn/view?usp=drivesdk', '_blank'); // Replace with your desired URL
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.play-btn').addEventListener('click', redirectToLink);
+    });
+</script>
+</html>
